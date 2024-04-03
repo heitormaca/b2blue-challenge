@@ -1,0 +1,21 @@
+.contentBox {
+  margin-top: 64px;
+  display: flex;
+  @media screen and (max-width: 599px) {
+    margin-top: 56px;
+  }
+}
+
+.mainContentBox {
+  height: calc(100vh - 64px);
+  @media screen and (max-width: 599px) {
+    height: calc(100vh - 56px);
+  }
+}
+
+.boxSidebar {
+  display: flex;
+  @media screen and (max-width: 599px) {
+    display: none;
+  }
+}

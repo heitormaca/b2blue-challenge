@@ -1,0 +1,27 @@
+.headerIconMobileButton {
+  display: none;
+  @media screen and (max-width: 599px) {
+    display: block;
+  }
+}
+
+.headerIconButton {
+  display: none;
+  @media screen and (min-width: 900px) {
+    display: block;
+  }
+}
+
+.headerTabletLogo {
+  display: none;
+  @media screen and (min-width: 600px) and (max-width: 899px)  {
+    display: block;
+  }
+}
+
+.headerLogo {
+  display: block;
+  @media screen and (min-width: 600px) and (max-width: 899px)  {
+    display: none;
+  }
+}

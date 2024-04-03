@@ -1,0 +1,43 @@
+.sidebarListItemButton[data-collapse='true'] {
+  justify-content: center;
+}
+
+.sidebarListItemButton[data-collapse='false'] {
+  justify-content: initial ;
+
+}
+
+.sidebarListItemButton {
+  @media screen and (min-width: 600px) and (max-width: 899px)  {
+    justify-content: center;
+  }
+}
+
+.sidebarListItemIconOpen {
+  margin-right: 24px;
+}
+
+.sidebarListItemIconCollapse {
+  margin-right: auto;
+}
+
+.sidebarListItemIcon {
+  @media screen and (min-width: 600px) and (max-width: 899px)  {
+    margin-right: auto;
+
+  }
+}
+
+.sidebarListItemTextOpen {
+  display: flex;
+}
+
+.sidebarListItemTextCollapse {
+  display: none;
+}
+
+.sidebarListItemText {
+  @media screen and (min-width: 600px) and (max-width: 899px)  {
+    display: none; 
+  }
+}

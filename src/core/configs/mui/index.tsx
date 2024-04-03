@@ -1,9 +1,11 @@
 'use client'
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import { PropsWithChildren } from 'react'
+import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles'
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import { CssBaseline } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles'
 import { useTheme } from './theme'
+import { cssTheme } from './cssTheme'
 
 interface MUIProps extends PropsWithChildren {
   colorMode?: string
@@ -12,11 +14,18 @@ interface MUIProps extends PropsWithChildren {
 export function MUIConfigProvider(props: MUIProps) {
   const theme = useTheme()
   return (
-    <AppRouterCacheProvider>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {props.children}
-      </ThemeProvider>
-    </AppRouterCacheProvider>
+    <CssVarsProvider theme={cssTheme}>
+      <AppRouterCacheProvider>
+        <ThemeProvider
+          theme={{
+            ...theme,
+            palette: { ...theme.palette, mode: props.colorMode || 'light' }
+          }}
+        >
+          <CssBaseline />
+          {props.children}
+        </ThemeProvider>
+      </AppRouterCacheProvider>
+    </CssVarsProvider>
   )
 }
