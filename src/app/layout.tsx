@@ -1,3 +1,4 @@
+import { MUIConfigProvider } from '@/core/configs/mui'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -13,7 +14,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <main>{children}</main>
+        <MUIConfigProvider>
+          <main>{children}</main>
+        </MUIConfigProvider>
       </body>
     </html>
   )
