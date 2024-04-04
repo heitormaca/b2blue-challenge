@@ -1,27 +1,6 @@
-import AdbIcon from '@mui/icons-material/Adb'
-import { Typography } from '@mui/material'
+import Image from 'next/image'
+import logo from '../../../../public/images/b2blue-logo.png'
 
 export default function Logo() {
-  return (
-    <>
-      <AdbIcon sx={{ mr: 1 }} />
-      <Typography
-        variant="h5"
-        noWrap
-        component="a"
-        href="/dashboard"
-        sx={{
-          mr: 2,
-          flexGrow: 1,
-          fontFamily: 'monospace',
-          fontWeight: 700,
-          letterSpacing: '.3rem',
-          color: 'inherit',
-          textDecoration: 'none'
-        }}
-      >
-        LOGO
-      </Typography>
-    </>
-  )
+  return <Image src={logo} alt="Logotipo B2Blue" width={90} />
 }

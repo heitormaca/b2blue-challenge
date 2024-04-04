@@ -2,8 +2,8 @@ import Image from 'next/image'
 import { Box, Button, Typography, useColorScheme } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import Modal from '@/components/_commons/Modal'
-import light from '../../../../../../../../public/theme-light.svg'
-import dark from '../../../../../../../../public/theme-dark.svg'
+import light from '../../../../../../../../public/images/theme-light.svg'
+import dark from '../../../../../../../../public/images/theme-dark.svg'
 import { toogleColorScheme } from '@/core/configs/next/cookies/colorScheme'
 
 export default function ThemeConfigModal(props: ThemeConfigModalProps) {
@@ -15,12 +15,12 @@ export default function ThemeConfigModal(props: ThemeConfigModalProps) {
     <Modal
       open={props.open}
       onClose={props.onClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
+      aria-labelledby="Configurar tema"
+      aria-describedby="Configurar tema"
       title="Configurar tema"
     >
       <div>
-        <Typography id="modal-modal-description">
+        <Typography>
           Selecione o tipo de tema entre modo claro e escuro.
         </Typography>
         <Grid container spacing={2} mt={1}>

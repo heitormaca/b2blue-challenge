@@ -23,7 +23,7 @@ export function MUIConfigProvider(props: MUIProps) {
           }}
         >
           <CssBaseline />
-          {props.children}
+          <main>{props.children}</main>
         </ThemeProvider>
       </AppRouterCacheProvider>
     </CssVarsProvider>

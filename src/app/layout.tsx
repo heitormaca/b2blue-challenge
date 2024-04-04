@@ -20,32 +20,34 @@ export default async function RootLayout({
   const colorMode = await getColorScheme()
   const collapse = await getCollapse()
 
+  const isDarkTheme = colorMode === 'dark'
+
   return (
     <html lang="pt-BR" data-mui-color-scheme={colorMode}>
       <body>
         <MUIConfigProvider colorMode={colorMode}>
-          <main>
-            <Header collapse={collapse} />
-            <Box className={styles.contentBox}>
-              <Box className={styles.boxSidebar}>
-                <Sidebar collapse={JSON.parse(collapse)} />
-              </Box>
+          <Header collapse={collapse} />
+          <Box className={styles.contentBox}>
+            <Box className={styles.boxSidebar}>
+              <Sidebar collapse={JSON.parse(collapse)} />
+            </Box>
 
-              <Box sx={{ flex: 1 }}>
-                <Box
-                  className={styles.mainContentBox}
-                  sx={{
-                    paddingY: 2,
-                    paddingX: 4,
-                    bgcolor: 'var(--md-demo-palette-common-background)',
-                    overflow: 'auto '
-                  }}
-                >
-                  {children}
-                </Box>
+            <Box sx={{ flex: 1 }}>
+              <Box
+                className={styles.mainContentBox}
+                sx={{
+                  paddingY: 2,
+                  paddingX: 3,
+                  bgcolor: isDarkTheme
+                    ? 'rgba(31, 38, 46, 0.15)'
+                    : 'rgba(243, 246, 249, 0.6)',
+                  overflow: 'auto'
+                }}
+              >
+                {children}
               </Box>
             </Box>
-          </main>
+          </Box>
         </MUIConfigProvider>
       </body>
     </html>
