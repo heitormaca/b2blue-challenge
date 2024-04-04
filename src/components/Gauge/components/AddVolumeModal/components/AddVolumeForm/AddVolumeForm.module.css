@@ -1,0 +1,10 @@
+.inputNumber input::-webkit-outer-spin-button,
+.inputNumber input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  background: red;
+}
+
+.inputNumber input[type=number] {
+  appearance: textfield;
+}

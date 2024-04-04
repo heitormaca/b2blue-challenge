@@ -1,6 +1,6 @@
 import Modal from '@/components/_commons/Modal'
-import { Button, Grid, Stack, TextField, Typography } from '@mui/material'
 import { AddVolumeModalProps } from './AddVolumeModal.types'
+import { AddVolumeForm } from './components/AddVolumeForm'
 
 export default function AddVolumeModal(props: AddVolumeModalProps) {
   return (
@@ -9,28 +9,10 @@ export default function AddVolumeModal(props: AddVolumeModalProps) {
       onClose={props.onClose}
       aria-labelledby="Adicionar volume"
       aria-describedby="Adicionar volume"
-      title="Adicionar volume"
+      title={`Adicionar volume da '${props.station}'`}
       position="top"
     >
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Typography>{`Adicione volume da ${props.station}:`}</Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <Stack direction="row" spacing={2}>
-            <form>
-              <TextField
-                id="outlined-number"
-                type="number"
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
-              <Button>Adicionar</Button>
-            </form>
-          </Stack>
-        </Grid>
-      </Grid>
+      <AddVolumeForm volume={props.volume} setVolume={props.setVolume} />
     </Modal>
   )
 }
