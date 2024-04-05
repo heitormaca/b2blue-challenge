@@ -55,7 +55,7 @@ export default function ModalProvider({
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: 'background.paper',
+    bgcolor: 'var(--md-demo-palette-background-paper)',
     boxShadow: 24
   }
 
@@ -98,13 +98,16 @@ export default function ModalProvider({
                     </IconButton>
                   </Box>
                   <Box>
-                    <Typography variant="body1" fontWeight={600}>
-                      {message}
-                    </Typography>
+                    <Typography fontWeight={600}>{message}</Typography>
                   </Box>
                   <Stack direction="row" justifyContent="flex-end">
                     <Button
-                      sx={{ mr: 2 }}
+                      sx={{
+                        mr: 2,
+                        border:
+                          '1px solid rgba(var(--md-demo-palette-primary-mainChannel) / 0.5)',
+                        color: 'var(--md-demo-palette-primary-main)'
+                      }}
                       variant="outlined"
                       onClick={handleCancel}
                     >

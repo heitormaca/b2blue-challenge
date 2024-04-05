@@ -12,6 +12,11 @@ export function useTheme() {
   const theme = createTheme({
     typography: {
       fontFamily: roboto.style.fontFamily
+    },
+    palette: {
+      primary: {
+        main: '#1E7AB9'
+      }
     }
   })
 

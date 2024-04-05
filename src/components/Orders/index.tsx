@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import { Order as OrderType } from './components/Order/Order.types'
 import Order from './components/Order'
 
@@ -12,11 +12,19 @@ export default async function OrderList() {
   return (
     <>
       <Grid container spacing={2}>
-        {data.map(order => (
-          <Grid key={order.id} item xs={12} md={4}>
-            <Order order={order} />
+        {!!data.length ? (
+          data.map(order => (
+            <Grid key={order.id} item xs={12} md={4}>
+              <Order order={order} />
+            </Grid>
+          ))
+        ) : (
+          <Grid item xs={12}>
+            <Typography p={2} textAlign="center">
+              Não há pedido(s) de coleta.
+            </Typography>
           </Grid>
-        ))}
+        )}
       </Grid>
     </>
   )

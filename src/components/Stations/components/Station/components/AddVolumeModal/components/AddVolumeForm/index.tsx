@@ -31,7 +31,7 @@ export default function AddVolumeForm({ action, station }: AddVolumeFormProps) {
           <input name="stationId" value={station.id} type="hidden" />
           <input name="stationVolume" value={station.volume} type="hidden" />
           <input name="stationName" value={station.name} type="hidden" />
-          <Button variant="contained" type="submit">
+          <Button variant="outlined" type="submit">
             Adicionar
           </Button>
         </Stack>
