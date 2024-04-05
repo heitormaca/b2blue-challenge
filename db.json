@@ -1,75 +1,20 @@
 {
   "stations": [
     {
-      "volume": 80,
+      "volume": 0,
       "name": "Estação 1",
       "id": "123"
     },
     {
-      "volume": 88,
+      "volume": 0,
       "name": "Estação 2",
       "id": "213"
     },
     {
-      "volume": 99,
+      "volume": 0,
       "name": "Estação 3",
       "id": "321"
     }
   ],
-  "orders": [
-    {
-      "stationId": "123",
-      "name": "Estação 1",
-      "volume": 80,
-      "collected": "true",
-      "collectDate": "2024-04-05T19:21:35.229Z",
-      "collectionOrderDate": "2024-04-05T19:21:26.657Z",
-      "id": "c9da"
-    },
-    {
-      "stationId": "213",
-      "name": "Estação 2",
-      "volume": 90,
-      "collected": "true",
-      "collectDate": "2024-04-05T19:21:36.853Z",
-      "collectionOrderDate": "2024-04-05T19:21:28.356Z",
-      "id": "3df7"
-    },
-    {
-      "stationId": "321",
-      "name": "Estação 3",
-      "volume": 88,
-      "collected": "true",
-      "collectDate": "2024-04-05T19:21:42.126Z",
-      "collectionOrderDate": "2024-04-05T19:21:31.902Z",
-      "id": "1100"
-    },
-    {
-      "id": "25f9",
-      "stationId": "123",
-      "name": "Estação 1",
-      "volume": 80,
-      "collected": "false",
-      "collectDate": null,
-      "collectionOrderDate": "2024-04-05T19:21:50.973Z"
-    },
-    {
-      "id": "7158",
-      "stationId": "213",
-      "name": "Estação 2",
-      "volume": 88,
-      "collected": "false",
-      "collectDate": null,
-      "collectionOrderDate": "2024-04-05T19:21:52.699Z"
-    },
-    {
-      "id": "a986",
-      "stationId": "321",
-      "name": "Estação 3",
-      "volume": 99,
-      "collected": "false",
-      "collectDate": null,
-      "collectionOrderDate": "2024-04-05T19:21:54.967Z"
-    }
-  ]
+  "orders": []
 }
