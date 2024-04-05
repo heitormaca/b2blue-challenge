@@ -1,7 +1,7 @@
 'use server'
 import { revalidateTag } from 'next/cache'
 import { addVolumeFormSchema } from './AddVolumeForm.schema'
-import { Order } from '@/app/orders/components/OrderList/OrderList.types'
+import { Order } from '@/components/Orders/components/Order/Order.types'
 
 export default async function addVolumeAction(
   _prevState: any,
@@ -27,9 +27,10 @@ export default async function addVolumeAction(
         const orderBody = {
           stationId: stationId,
           name: stationName,
-          volume: null,
+          volume: volume,
           collected: 'false',
-          dateCollectOrder: new Date().toISOString()
+          collectDate: null,
+          collectionOrderDate: new Date().toISOString()
         }
 
         await fetch('http://localhost:3000/orders', {
@@ -51,6 +52,7 @@ export default async function addVolumeAction(
       body: JSON.stringify(newStation)
     })
     revalidateTag('stations')
+    revalidateTag('orders')
     return { errors: [] }
   } else {
     return {

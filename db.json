@@ -6,7 +6,7 @@
       "id": "123"
     },
     {
-      "volume": 0,
+      "volume": 5,
       "name": "Estação 2",
       "id": "213"
     },
@@ -18,12 +18,13 @@
   ],
   "orders": [
     {
-      "id": "297a",
+      "id": "8043",
       "stationId": "123",
       "name": "Estação 1",
-      "volume": null,
+      "volume": 80,
       "collected": "false",
-      "dateCollectOrder": "2024-04-05T13:33:38.662Z"
+      "collectDate": null,
+      "collectionOrderDate": "2024-04-05T14:57:28.724Z"
     }
   ]
 }

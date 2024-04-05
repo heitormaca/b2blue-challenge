@@ -13,7 +13,7 @@ import {
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { MobileDrawerMenuProps } from './MobileDrawerMenu.types'
-import { menuList } from '@/app/menuList'
+import { menuList } from '@/components/Layout/menuList'
 
 export default function MobileDrawerMenu({
   open,

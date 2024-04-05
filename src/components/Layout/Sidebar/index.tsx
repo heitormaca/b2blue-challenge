@@ -9,7 +9,7 @@ import {
 import { SidebarProps } from './Sidebar.types'
 import { usePathname, useRouter } from 'next/navigation'
 import styles from './Sidebar.module.css'
-import { menuList } from '@/app/menuList'
+import { menuList } from '@/components/Layout/menuList'
 
 export default function Sidebar({ collapse }: SidebarProps) {
   const router = useRouter()

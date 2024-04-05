@@ -1,5 +1,6 @@
-import Panel from '@/components/_commons/Panel'
 import { Grid, Typography } from '@mui/material'
+import OrderList from '@/components/Orders'
+import Panel from '@/components/_commons/Panel'
 
 export default function Orders() {
   return (
@@ -10,7 +11,9 @@ export default function Orders() {
         </Grid>
         <Grid item xs={12}>
           <Panel>
-            <div></div>
+            <div>
+              <OrderList />
+            </div>
           </Panel>
         </Grid>
       </Grid>
