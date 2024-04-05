@@ -1,5 +1,4 @@
 import { Grid } from '@mui/material'
-import Snackbar from '@/components/_commons/Snackbar'
 import Station from './components/Station'
 import { Station as StationType } from './components/Station/Station.types'
 
@@ -19,7 +18,6 @@ export default async function StationList() {
           </Grid>
         ))}
       </Grid>
-      <Snackbar stations={data} />
     </>
   )
 }

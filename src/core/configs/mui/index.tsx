@@ -6,6 +6,7 @@ import { CssBaseline } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles'
 import { useTheme } from './theme'
 import { cssTheme } from './cssTheme'
+import { SnackbarProvider } from 'notistack'
 
 interface MUIProps extends PropsWithChildren {
   colorMode?: string
@@ -22,8 +23,10 @@ export function MUIConfigProvider(props: MUIProps) {
             palette: { ...theme.palette, mode: props.colorMode || 'light' }
           }}
         >
-          <CssBaseline />
-          <main>{props.children}</main>
+          <SnackbarProvider maxSnack={3}>
+            <CssBaseline />
+            <main>{props.children}</main>
+          </SnackbarProvider>
         </ThemeProvider>
       </AppRouterCacheProvider>
     </CssVarsProvider>

@@ -1,9 +1,16 @@
+'use client'
 import { Box, Button, Stack, Tooltip, Typography } from '@mui/material'
 import dayjs from 'dayjs'
 import { OrderProps } from './Order.types'
 import ProgressBar from '@/components/_commons/ProgressBar'
+import collect from './actions'
+import { useModals } from '@/core/context/Modal'
+import { useSnackbar } from 'notistack'
 
 export default function Order({ order }: OrderProps) {
+  const { confirm } = useModals()
+  const { enqueueSnackbar } = useSnackbar()
+
   const collectionOrderDate = dayjs(order.collectionOrderDate).format(
     'DD/MM/YYYY'
   )
@@ -39,7 +46,25 @@ export default function Order({ order }: OrderProps) {
           <Typography>Volume da estação:</Typography>
           <ProgressBar volume={order.volume} />
         </Stack>
-        <Button variant="contained" disabled={!!collectDate}>
+        <Button
+          variant="contained"
+          disabled={!!collectDate}
+          onClick={() =>
+            confirm({
+              message:
+                'Você deseja confirmar a realização da coleta da estação?',
+              onOk: async () => {
+                await collect({
+                  order: order
+                }).then(() =>
+                  enqueueSnackbar('Estação coletada com sucesso!', {
+                    variant: 'success'
+                  })
+                )
+              }
+            })
+          }
+        >
           {collectDate ? 'Coletado' : 'Efetuar coleta'}
         </Button>
       </Stack>

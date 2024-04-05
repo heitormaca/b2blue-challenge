@@ -6,7 +6,7 @@ import Header from '@/components/Layout/Header'
 import Sidebar from '@/components/Layout/Sidebar'
 import { getCollapse } from '@/core/configs/next/cookies/collapse'
 import { getColorScheme } from '@/core/configs/next/cookies/colorScheme'
-import SnackbarProvider from '@/core/context/Snackbar'
+import ModalProvider from '@/core/context/Modal'
 
 export const metadata: Metadata = {
   title: 'B2Blue - Sistema de controle de volume de armazenamento',
@@ -26,7 +26,7 @@ export default async function RootLayout({
   return (
     <html lang="pt-BR" data-mui-color-scheme={colorMode}>
       <body>
-        <SnackbarProvider>
+        <ModalProvider>
           <MUIConfigProvider colorMode={colorMode}>
             <Header collapse={collapse} />
             <Box className={styles.contentBox}>
@@ -51,7 +51,7 @@ export default async function RootLayout({
               </Box>
             </Box>
           </MUIConfigProvider>
-        </SnackbarProvider>
+        </ModalProvider>
       </body>
     </html>
   )
