@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { Button, IconButton, Snackbar as MUISnackbar } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { useSnackbar } from '@/core/context/Snackbar'
-import { Station } from '@/app/components/GaugeStations/GaugeStations.Types'
+import { Station } from '@/app/components/StationList/StationList.Types'
 
 export default function Snackbar({ stations }: { stations: Station[] }) {
   const { openSnackbar, toggleSnackbar } = useSnackbar()

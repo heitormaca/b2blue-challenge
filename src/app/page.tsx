@@ -1,6 +1,6 @@
+import StationList from '@/components/Stations'
 import Panel from '@/components/_commons/Panel'
 import { Grid, Typography } from '@mui/material'
-import GaugeStations from './components/GaugeStations'
 
 export default function Stations() {
   return (
@@ -12,7 +12,7 @@ export default function Stations() {
         <Grid item xs={12}>
           <Panel>
             <div>
-              <GaugeStations />
+              <StationList />
             </div>
           </Panel>
         </Grid>

@@ -1,6 +1,7 @@
 'use server'
 import { revalidateTag } from 'next/cache'
 import { addVolumeFormSchema } from './AddVolumeForm.schema'
+import { Order } from '@/app/orders/components/OrderList/OrderList.types'
 
 export default async function addVolumeAction(
   _prevState: any,
@@ -18,9 +19,9 @@ export default async function addVolumeAction(
     const stationName = params.get('stationName')
 
     if (volume >= 80) {
-      const orders = await fetch(
+      const orders = (await fetch(
         `http://localhost:3000/orders?stationId=${stationId}&collected=false`
-      ).then(data => data.json())
+      ).then(data => data.json())) as Order[]
 
       if (!orders.length) {
         const orderBody = {

@@ -1,12 +1,12 @@
 'use client'
-import { Button, Stack, Typography } from '@mui/material'
-import { Gauge as MUIGauge, gaugeClasses } from '@mui/x-charts/Gauge'
-import { GaugeProps } from './Gauge.types'
 import { useState } from 'react'
-import AddVolumeModal from './components/AddVolumeModal'
+import { Button, Stack, Typography } from '@mui/material'
+import { Gauge, gaugeClasses } from '@mui/x-charts/Gauge'
 import AddIcon from '@mui/icons-material/Add'
+import { StationProps } from './Station.types'
+import AddVolumeModal from './components/AddVolumeModal'
 
-export default function Gauge({ station }: GaugeProps) {
+export default function Station({ station }: StationProps) {
   const [modalOpened, setModalOpened] = useState(false)
 
   const toggleModal = () => {
@@ -28,7 +28,7 @@ export default function Gauge({ station }: GaugeProps) {
     >
       <Typography variant="h6">{station.name}</Typography>
 
-      <MUIGauge
+      <Gauge
         key={station.id}
         width={200}
         height={200}

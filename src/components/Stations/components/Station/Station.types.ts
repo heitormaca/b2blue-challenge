@@ -3,3 +3,7 @@ export type Station = {
   name: string
   volume: number
 }
+
+export type StationProps = {
+  station: Station
+}

@@ -1,4 +1,4 @@
-import { Station } from '@/app/components/GaugeStations/GaugeStations.Types'
+import { Station } from '../../Station.types'
 
 export type AddVolumeModalProps = {
   open: boolean

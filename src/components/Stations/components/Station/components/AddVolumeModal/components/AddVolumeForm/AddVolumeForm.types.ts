@@ -1,5 +1,5 @@
-import { Station } from '@/app/components/GaugeStations/GaugeStations.Types'
 import { ZodIssue } from 'zod'
+import { Station } from '../../../../Station.types'
 
 export interface AddVolumeFormProps {
   action: (_prevState: any, params: FormData) => Promise<{ errors: ZodIssue[] }>
