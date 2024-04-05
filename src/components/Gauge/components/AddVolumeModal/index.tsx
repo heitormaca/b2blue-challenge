@@ -1,18 +1,25 @@
 import Modal from '@/components/_commons/Modal'
 import { AddVolumeModalProps } from './AddVolumeModal.types'
-import { AddVolumeForm } from './components/AddVolumeForm'
+import AddVolumeForm from './components/AddVolumeForm'
+import addVolumeAction from './components/AddVolumeForm/AddVolumeAction'
 
-export default function AddVolumeModal(props: AddVolumeModalProps) {
+export default function AddVolumeModal({
+  open,
+  onClose,
+  station
+}: AddVolumeModalProps) {
   return (
     <Modal
-      open={props.open}
-      onClose={props.onClose}
+      open={open}
+      onClose={onClose}
       aria-labelledby="Adicionar volume"
       aria-describedby="Adicionar volume"
-      title={`Adicionar volume da '${props.station}'`}
+      title={`Adicionar volume da '${station.name}'`}
       position="top"
     >
-      <AddVolumeForm volume={props.volume} setVolume={props.setVolume} />
+      <>
+        <AddVolumeForm action={addVolumeAction} station={station} />
+      </>
     </Modal>
   )
 }

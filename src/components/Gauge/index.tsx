@@ -6,16 +6,15 @@ import { useState } from 'react'
 import AddVolumeModal from './components/AddVolumeModal'
 import AddIcon from '@mui/icons-material/Add'
 
-export default function Gauge({ title }: GaugeProps) {
+export default function Gauge({ station }: GaugeProps) {
   const [modalOpened, setModalOpened] = useState(false)
-  const [volume, setVolume] = useState(0)
 
   const toggleModal = () => {
     setModalOpened(curr => !curr)
   }
 
-  const disableButton = volume === 100
-  const collectOrder = volume >= 80
+  const disableButton = station.volume === 100
+  const collectOrder = station.volume >= 80
 
   return (
     <Stack
@@ -23,15 +22,17 @@ export default function Gauge({ title }: GaugeProps) {
         alignItems: 'center',
         border: '1px solid',
         borderColor: 'var(--md-demo-palette-text-primary)',
-        p: 2
+        p: 2,
+        borderRadius: 1
       }}
     >
-      <Typography variant="h6">{title}</Typography>
+      <Typography variant="h6">{station.name}</Typography>
 
       <MUIGauge
+        key={station.id}
         width={200}
         height={200}
-        value={volume}
+        value={station.volume}
         startAngle={-110}
         endAngle={110}
         sx={{
@@ -46,6 +47,7 @@ export default function Gauge({ title }: GaugeProps) {
         text={({ value, valueMax }) => `${value} / ${valueMax}`}
       />
       <Button
+        variant="contained"
         disabled={disableButton}
         onClick={toggleModal}
         startIcon={<AddIcon />}
@@ -55,9 +57,7 @@ export default function Gauge({ title }: GaugeProps) {
       <AddVolumeModal
         open={modalOpened}
         onClose={toggleModal}
-        station={title}
-        volume={volume}
-        setVolume={setVolume}
+        station={station}
       />
     </Stack>
   )

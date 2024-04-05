@@ -1,9 +1,7 @@
-import { Dispatch, SetStateAction } from 'react'
+import { Station } from '@/app/components/GaugeStations/GaugeStations.Types'
 
 export type AddVolumeModalProps = {
   open: boolean
   onClose: VoidFunction
-  station: string
-  volume: number;
-  setVolume: Dispatch<SetStateAction<number>>
+  station: Station
 }

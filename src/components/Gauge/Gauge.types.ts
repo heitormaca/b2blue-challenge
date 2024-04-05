@@ -1,3 +1,5 @@
+import { Station } from '@/app/components/GaugeStations/GaugeStations.Types'
+
 export type GaugeProps = {
-  title: string
+  station: Station
 }
