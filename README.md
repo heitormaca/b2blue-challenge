@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio B2Blue
 
-## Getting Started
+Este projeto foi desenvolvido para o desafio da empresa B2Blue. A documentação dos requisitos do desafio está dentro das releases do repositório.
 
-First, run the development server:
+## Requisitos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js v21.7.0 ou superior;
+- Gerenciador de pacotes Pnpm v8.15.5 ou superior;
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuração do Back-end
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+O Back-end foi desenvolvido utilizando a biblioteca JSON Server. Para configurar o Back-end, siga os passos abaixo:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Primeiramente, é necessário instalar o JSON Server caso você não o tenha na sua máquina.
 
-## Learn More
+  > pnpm install -g json-server
 
-To learn more about Next.js, take a look at the following resources:
+- Em seguida, clone o projeto para o seu local na máquina.
+- Execute o servidor do backend inserindo o comando dentro do diretório raiz do seu projeto:
+  > json-server --watch db.json
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pronto, agora o servidor será executado no endereço "http://localhost:3000".
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Configuração do Front-end
 
-## Deploy on Vercel
+O Front-end foi desenvolvido utilizando Next.js v14 e Material UI v5. Para configurar o Frontend, siga os passos abaixo:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Instale as dependências necessárias executando o seguinte comando dentro do diretório raiz do seu projeto:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  > pnpm install
+
+- Inicie o projeto, executando o comando:
+  > pnpm run dev
+
+Pronto, agora para acessar a aplicação, basta abrir o endereço "http://localhost:3001" no seu navegador.
