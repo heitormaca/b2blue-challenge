@@ -32,4 +32,4 @@ O Front-end foi desenvolvido utilizando Next.js v14 e Material UI v5. Para confi
 - Inicie o projeto, executando o comando:
   > pnpm run dev
 
-Pronto, agora para acessar a aplicação, basta abrir o endereço "http://localhost:3001" no seu navegador.
+Pronto, agora para acessar a aplicação, basta abrir o endereço "http://localhost:3001" no seu navegador :).
